@@ -30,15 +30,23 @@ void loop() {
   display.setFont(&FreeMonoOblique9pt7b); //Comando para definir a fonte que será utilizada;
   display.setTextColor(WHITE); //Comando para definir a cor do texto;
   display.setTextSize(1); //Comando para definir tamanho od
-  display.setCursor(10, 22); //Definição de onde o texto será escrito. Lembre se que: linha, coluna;
+  display.setCursor(37, 17); //Definição de onde o texto será escrito. Lembre se que: linha, coluna;
   
   if (campo_mag != last_state){
     if (campo_mag){
-      display.print("Campo magnético nao detectado"); 
+
+      display.print("Campo"); 
+      display.setCursor(15, 35); //Definição de onde o texto será escrito. Lembre se que: linha, coluna;
+      display.print("magnetico indetectado");
     }
 
     else {
-      display.print("Campo magnético detectado"); 
+      display.print("Campo"); 
+      display.setCursor(15, 35); //Definição de onde o texto será escrito. Lembre se que: linha, coluna;
+      display.print("magnetico");
+      display.setCursor(15, 54); //Definição de onde o texto será escrito. Lembre se que: linha, coluna;
+      display.print("detectado");
+      
     }
 
     last_state = campo_mag; 
@@ -48,3 +56,4 @@ void loop() {
 delay (100);
 
 }
+
